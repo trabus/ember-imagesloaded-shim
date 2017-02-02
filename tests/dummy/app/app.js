@@ -14,5 +14,5 @@ App = Ember.Application.extend({
 });
 
 loadInitializers(App, config.modulePrefix);
-
+Ember.$().imagesLoaded();
 export default App;
