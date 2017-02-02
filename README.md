@@ -1,6 +1,8 @@
 # ember-imagesloaded-shim
 
-This README outlines the details of collaborating on this Ember addon.
+Ember-cli shim for [imagesloaded](http://imagesloaded.desandro.com/). Uses npm imagesloaded package, and imports it into your app to be available for global use. See [their site](http://imagesloaded.desandro.com/) for details on usage of imagesloaded itself.
+
+This addon assumes npm 3+, because it requires npm 3's dependency flattening behavior. If you are using npm 2, you must install imagesloaded to your project as a dev dependency: `npm i imagesloaded --save-dev`
 
 ## Installation
 
