@@ -1,6 +1,6 @@
 /* jshint node: true */
 'use strict';
-
+var path = require('path');
 var mergeTrees = require('broccoli-merge-trees');
 
 module.exports = {
@@ -14,6 +14,8 @@ module.exports = {
     return app;
   },
   treeForVendor: function() {
-    return mergeTrees(['node_modules/imagesloaded']);
+    var imagesLoadedModulePath = require.resolve('imagesloaded');
+    var imagesLoadedPath = path.dirname(imagesLoadedModulePath);
+    return mergeTrees([imagesLoadedPath]);
   }
 };
