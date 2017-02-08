@@ -2,6 +2,7 @@
 'use strict';
 var path = require('path');
 var mergeTrees = require('broccoli-merge-trees');
+var Funnel = require('broccoli-funnel');
 
 module.exports = {
   name: 'ember-imagesloaded-shim',
@@ -17,6 +18,7 @@ module.exports = {
   treeForVendor: function() {
     var imagesLoadedModulePath = require.resolve('imagesloaded');
     var imagesLoadedPath = path.dirname(imagesLoadedModulePath);
-    return mergeTrees([imagesLoadedPath]);
+    var vendorTree = new Funnel('vendor');
+    return mergeTrees([imagesLoadedPath, vendorTree]);
   }
 };
