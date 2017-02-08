@@ -11,6 +11,7 @@ module.exports = {
       development: 'vendor/imagesloaded.pkgd.js',
       production: 'vendor/imagesloaded.pkgd.min.js'
     });
+    app.import('vendor/shims/imagesloaded.js');
     return app;
   },
   treeForVendor: function() {
