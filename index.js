@@ -2,7 +2,6 @@
 'use strict';
 var path = require('path');
 var mergeTrees = require('broccoli-merge-trees');
-var Funnel = require('broccoli-funnel');
 
 module.exports = {
   name: 'ember-imagesloaded-shim',
@@ -15,10 +14,13 @@ module.exports = {
     app.import('vendor/shims/imagesloaded.js');
     return app;
   },
-  treeForVendor: function() {
-    var imagesLoadedModulePath = require.resolve('imagesloaded');
-    var imagesLoadedPath = path.dirname(imagesLoadedModulePath);
-    var vendorTree = new Funnel('vendor');
-    return mergeTrees([imagesLoadedPath, vendorTree]);
+  treeForVendor: function(vendorTree) {
+    var trees = [];
+    var imagesLoadedPath = path.dirname(require.resolve('imagesloaded'));
+    trees.push(imagesLoadedPath);
+    if (vendorTree) {
+        trees.push(vendorTree);
+    }
+    return mergeTrees(trees);
   }
 };
