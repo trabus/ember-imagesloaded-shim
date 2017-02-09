@@ -2,7 +2,7 @@
   function vendorModule() {
     'use strict';
 
-    return { 'default': self['imagesloaded'] };
+    return { 'default': self['imagesLoaded'] };
   }
 
   define('imagesloaded', [], vendorModule);
