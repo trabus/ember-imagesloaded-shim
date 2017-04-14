@@ -1,5 +1,7 @@
 # ember-imagesloaded-shim
 
+[![npm version](https://badge.fury.io/js/ember-imagesloaded-shim.svg)](https://badge.fury.io/js/ember-imagesloaded-shim)
+
 Ember-cli shim for [imagesloaded](http://imagesloaded.desandro.com/). Uses npm imagesloaded package, and imports it into your app to be available for global use. See [their site](http://imagesloaded.desandro.com/) for details on usage of imagesloaded itself.
 
 This addon assumes npm 3+, because it requires npm 3's dependency flattening behavior. If you are using npm 2, you must install imagesloaded to your project as a dev dependency: `npm i imagesloaded --save-dev`
